@@ -22,7 +22,12 @@ public class MarkdownParse {
                 continue;
             }
             int closeParen = markdown.indexOf(")", openParen);
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            String link = markdown.substring(openParen + 1, closeParen).strip();
+            if (link.indexOf(" ") > -1 || link.indexOf("\n") > -1 || link.indexOf("\t") > -1) {
+                currentIndex = closeParen + 1;
+                continue;
+            }
+            toReturn.add(link);
             currentIndex = closeParen + 1;
         }
 

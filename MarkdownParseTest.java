@@ -20,7 +20,7 @@ public class MarkdownParseTest {
         // String contents= Files.readString(Path.of("./test-file2.md"));
         String contents = Files.readString(Path.of(MarkdownParseTest.class.getResource("").getPath().replace("%20",
                 " "), "test-file2.md"));
-        List<String> expect = List.of("https://google.com", "some-page.html");
+        List<String> expect = List.of("https://google.com", "some-thing.html");
         assertEquals(expect, MarkdownParse.getLinks(contents));
     }
 
@@ -54,7 +54,10 @@ public class MarkdownParseTest {
 
     @Test
     public void testNestedParens() throws IOException {
-        String contents = Files.readString(Path.of("test-parens-inside-link.md"));
+        //String contents = Files.readString(Path.of("test-parens-inside-link.md"));
+
+        String contents = Files.readString(Path.of(MarkdownParseTest.class.getResource("").getPath().replace("%20",
+                " "), "test-parens-inside-link.md"));
         List<String> expect = List.of("something.com()", "something.com((()))",
                 "something.com", "boring.com");
         assertEquals(expect, MarkdownParse.getLinks(contents));
@@ -62,7 +65,9 @@ public class MarkdownParseTest {
 
     @Test
     public void testMissingCloseParen() throws IOException {
-        String contents = Files.readString(Path.of("test-missing-paren-plus-test-file2.md"));
+        String contents = Files.readString(Path.of(MarkdownParseTest.class.getResource("").getPath().replace("%20",
+                " "), "test-missing-paren-plus-test-file2.md"));
+        //String contents = Files.readString(Path.of("test-missing-paren-plus-test-file2.md"));
         List<String> expect = List.of("https://something.com", "some-page.html");
         assertEquals(expect, MarkdownParse.getLinks(contents));
     }
