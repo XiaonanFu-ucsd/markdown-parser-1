@@ -24,7 +24,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             String link = markdown.substring(openParen + 1, closeParen).strip();
             if (link.indexOf(" ") > -1 || link.indexOf("\n") > -1 || link.indexOf("\t") > -1) {
-                currentIndex = closeParen + 1;
+                currentIndex = openParen + 1;
                 continue;
             }
             toReturn.add(link);
