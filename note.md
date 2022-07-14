@@ -43,3 +43,10 @@ show wha the makefile does for make test:
 
 # Lab 6 bash note:
 $1 is the first arg passed to this shell script. 
+
+# Lab 6 autograder
+grade.sh clone the target (homework) repo, copy the test file to the local repo, compile the test file, and test on it. 
+
+This script does not depend on the makefile in the repo, and it shouldn't depend on it, because it does not compile the new test .java file. 
+
+It need the lib to work. 
