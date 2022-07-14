@@ -34,4 +34,8 @@ assertEquals(2, 1 + 1); // compare expected result and acutal result
 One error: the MDParser wrongly regonize the (aaa aaa.html) as a link. 
 Another error: there should not have a space between bracket and para
 
-# Part 6
+# Lab 6 makefile note:
+show wha the makefile does for make test:
+- if no .class files, complie .java files. 
+- if changed MarkdownParse.java file, both file compiled, because Test.java depend on the MP.class
+- if only change test file, only compile test file. 
