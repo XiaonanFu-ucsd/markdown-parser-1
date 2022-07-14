@@ -39,3 +39,7 @@ show wha the makefile does for make test:
 - if no .class files, complie .java files. 
 - if changed MarkdownParse.java file, both file compiled, because Test.java depend on the MP.class
 - if only change test file, only compile test file. 
+
+
+# Lab 6 bash note:
+$1 is the first arg passed to this shell script. 
